@@ -1,0 +1,6 @@
+API return un json()
+class Todo qui gère un todo({title:xxx,completed:false,id,y})
+class TodoList qui gère les todos (todos=[class Todo],filtrage=["toutes","afaire","faites"])
+class TodoDOM pour les éléments(comme li,label etc...) à creér 
+class TodoUI pour les eventListeners , les filtrages, l'ajout, suppression
+main.js qui rassemble tous les class avec le fonction API

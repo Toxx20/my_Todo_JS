@@ -1,0 +1,8 @@
+.error{
+    display: flex;
+    margin: 5%;
+    background-color: #dc3545;
+    color: white;
+    justify-content: center;
+    padding: 2%;
+}
