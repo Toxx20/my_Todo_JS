@@ -14,7 +14,12 @@ export class TodoDOM{
     #ul = document.querySelector('ul')
     vid
 
-    constructor(todo){
+    static clear() {
+        const ul = document.querySelector('ul')
+        ul.innerHTML = ''
+    }
+
+    constructor(todo,todolist){
         this.vid = `todo-${todo.id}`
 
         if(todo.completed===true){
@@ -24,7 +29,7 @@ export class TodoDOM{
         }
 
         this.#label1 = fnCreateElement('label',{'class':'ms-2 form-check-label','for':`${this.vid}`})
-        this.#label2 = fnCreateElement('label',{'class':'ms-auto btn btn-danger btn-sm','for':`${this.vid}`})
+        this.#label2 = fnCreateElement('label',{'class':'ms-auto btn btn-danger btn-sm'})
         this.#ul.prepend(this.#li)
         this.#li.appendChild(this.#input)
         this.#li.appendChild(this.#label1)
@@ -32,10 +37,10 @@ export class TodoDOM{
         this.#li.appendChild(this.#label2)
         this.#label2.appendChild(this.#i)
 
-        this.#label2.addEventListener('click',(e)=>{
+        this.#label2.addEventListener('click',()=>{
+            todolist.remove(todo.id)
             this.#li.remove()
         })
-
         
     }
     

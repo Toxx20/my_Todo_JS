@@ -10,13 +10,32 @@ import './TodoUI.js'
 const data = await FetchJSON('https://jsonplaceholder.typicode.com/todos?_limit=5')
 
 const finaldata = mapdata(data)
+const todoList = new TodoList()
 
 finaldata.forEach((e) =>{
     const todo = new Todo(e.id,e.title,e.completed)
+    todoList.add(todo)
     //console.log(todo)
-    const todoDom = new TodoDOM(todo)
+    new TodoDOM(todo,todolist)
 
     // console.log(todo.completed)
+})
+
+const buttons = document.querySelectorAll('[data-filter]')
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+
+        const filter = button.dataset.filter
+
+        const todos = todoList.filter(filter)
+
+        TodoDOM.clear()
+
+        todos.forEach(todo => {
+            new TodoDOM(todo, todoList)
+        })
+    })
 })
 
 
