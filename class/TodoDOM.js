@@ -35,6 +35,8 @@ export class TodoDOM{
         this.#label2.addEventListener('click',(e)=>{
             this.#li.remove()
         })
+
+        
     }
     
 }

@@ -15,6 +15,7 @@ finaldata.forEach((e) =>{
     const todo = new Todo(e.id,e.title,e.completed)
     //console.log(todo)
     const todoDom = new TodoDOM(todo)
+
     // console.log(todo.completed)
 })
 
