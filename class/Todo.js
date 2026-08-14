@@ -7,7 +7,7 @@
 export class Todo{
     #id
     #title 
-    #completed = false
+    #completed
     constructor(id,title,completed){
         this.#id = id
         this.#title = title
@@ -24,5 +24,6 @@ export class Todo{
         return this.#completed
     }
 }
+
 
 

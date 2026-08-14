@@ -31,3 +31,15 @@ export function fnCreateElement(element,obj={}){
     return el
 }
 
+/**
+ * 
+ * @param {string} e 
+ * @returns {object}
+ */
+export function createDataObject(e){
+    const obj = {}
+    obj['id']= new Date().getUTCMilliseconds()
+    obj['title']=e
+    obj['completed']= false
+    return obj
+}
